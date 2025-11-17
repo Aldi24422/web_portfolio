@@ -8,6 +8,12 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest # Gunakan server Linux
+    
+    # --- INI ADALAH PERBAIKANNYA ---
+    permissions:
+      contents: write
+    # ---------------------------------
+
     steps:
       - name: 1. Ambil kode
         uses: actions/checkout@v3
