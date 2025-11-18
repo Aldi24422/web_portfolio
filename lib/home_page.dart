@@ -1,5 +1,5 @@
-// --- GANTI SELURUH FILE INI ---
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart'; // Import animasi
 import 'package:web_portfolio/app_colors.dart';
 import 'package:web_portfolio/widgets/desktop_appbar.dart';
 import 'package:web_portfolio/widgets/mobile_drawer.dart';
@@ -11,7 +11,6 @@ import 'package:web_portfolio/sections/experience_section.dart';
 import 'package:web_portfolio/sections/education_section.dart';
 import 'package:web_portfolio/sections/contact_section.dart';
 
-// 1. UBAH JADI STATEFULWIDGET
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -20,7 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // 2. BUAT KUNCI UNTUK SETIAP BAGIAN
+  // 1. Membuat Kunci (Key) untuk setiap bagian agar bisa di-scroll
   final GlobalKey heroKey = GlobalKey();
   final GlobalKey aboutKey = GlobalKey();
   final GlobalKey skillsKey = GlobalKey();
@@ -28,27 +27,24 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey educationKey = GlobalKey();
   final GlobalKey contactKey = GlobalKey();
 
-  // 3. BUAT FUNGSI SCROLL
+  // 2. Fungsi untuk melakukan scroll ke bagian tertentu
   void scrollToSection(GlobalKey key) {
-    // Ambil konteks (lokasi/posisi) dari kunci
     final context = key.currentContext;
     if (context != null) {
-      // Perintahkan untuk scroll ke konteks tersebut
       Scrollable.ensureVisible(
         context,
-        duration: const Duration(milliseconds: 600), // Durasi scroll
-        curve: Curves.easeInOut, // Animasi scroll
+        duration: const Duration(milliseconds: 800), // Durasi scroll
+        curve: Curves.easeInOutCubic, // Animasi scroll yang halus
       );
     }
   }
 
-  // Buat Map (kamus) untuk dikirim ke AppBar/Drawer
   late final Map<String, GlobalKey> sectionKeys;
 
   @override
   void initState() {
     super.initState();
-    // Inisialisasi Map-nya
+    // Mendaftarkan kunci ke dalam Map agar mudah dikirim ke AppBar/Drawer
     sectionKeys = {
       'hero': heroKey,
       'about': aboutKey,
@@ -63,14 +59,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
+        // Tentukan breakpoint (batas lebar) untuk mobile vs desktop
         final bool isMobile = constraints.maxWidth < 768;
 
         return Scaffold(
           backgroundColor: AppColors.offWhite,
           
-          // 4. KIRIM FUNGSI & KUNCI KE APPBAR
+          // --- APP BAR (Navigasi Atas) ---
           appBar: isMobile
-              ? AppBar(
+              ? AppBar( // Tampilan Mobile
                   backgroundColor: AppColors.offWhite,
                   iconTheme: const IconThemeData(color: AppColors.darkGreen),
                   elevation: 1.0,
@@ -82,29 +79,58 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 )
-              : DesktopAppBar(
+              : DesktopAppBar( // Tampilan Desktop (Custom Widget)
                   keys: sectionKeys,
-                  onScroll: scrollToSection, // Kirim fungsi
+                  onScroll: scrollToSection,
                 ),
 
-          // 5. KIRIM FUNGSI & KUNCI KE DRAWER
+          // --- DRAWER (Menu Samping untuk Mobile) ---
           drawer: isMobile
               ? MobileDrawer(
                   keys: sectionKeys,
-                  onScroll: scrollToSection, // Kirim fungsi
+                  onScroll: scrollToSection,
                 )
               : null,
           
+          // --- BODY (Konten Utama) ---
           body: SingleChildScrollView(
             child: Column(
               children: [
-                // 6. PASANG KUNCI KE SETIAP BAGIAN
-                HeroSection(key: heroKey, isMobile: isMobile),
-                AboutSection(key: aboutKey, isMobile: isMobile),
-                SkillSection(key: skillsKey, isMobile: isMobile),
-                ExperienceSection(key: experienceKey, isMobile: isMobile),
-                EducationSection(key: educationKey, isMobile: isMobile),
-                ContactSection(key: contactKey, isMobile: isMobile),
+                // 1. Hero Section (Muncul Pertama)
+                HeroSection(key: heroKey, isMobile: isMobile)
+                    .animate()
+                    .fadeIn(duration: 600.ms)
+                    .slideY(begin: 0.3, end: 0, curve: Curves.easeOut),
+
+                // 2. About Section (Delay 200ms)
+                AboutSection(key: aboutKey, isMobile: isMobile)
+                    .animate()
+                    .fadeIn(duration: 600.ms, delay: 200.ms)
+                    .slideY(begin: 0.3, end: 0, curve: Curves.easeOut),
+
+                // 3. Skill Section (Delay 400ms)
+                SkillSection(key: skillsKey, isMobile: isMobile)
+                    .animate()
+                    .fadeIn(duration: 600.ms, delay: 400.ms)
+                    .slideY(begin: 0.3, end: 0, curve: Curves.easeOut),
+
+                // 4. Experience Section (Delay 600ms)
+                ExperienceSection(key: experienceKey, isMobile: isMobile)
+                    .animate()
+                    .fadeIn(duration: 600.ms, delay: 600.ms)
+                    .slideY(begin: 0.3, end: 0, curve: Curves.easeOut),
+
+                // 5. Education Section (Delay 800ms)
+                EducationSection(key: educationKey, isMobile: isMobile)
+                    .animate()
+                    .fadeIn(duration: 600.ms, delay: 800.ms)
+                    .slideY(begin: 0.3, end: 0, curve: Curves.easeOut),
+
+                // 6. Contact Section (Delay 1 detik)
+                ContactSection(key: contactKey, isMobile: isMobile)
+                    .animate()
+                    .fadeIn(duration: 600.ms, delay: 1000.ms)
+                    .slideY(begin: 0.3, end: 0, curve: Curves.easeOut),
               ],
             ),
           ),

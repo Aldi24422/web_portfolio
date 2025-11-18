@@ -114,10 +114,57 @@ class SkillSection extends StatelessWidget {
   }
 }
 
+// --- WIDGET BARU: PEMBUNGKUS ANIMASI KARTU ---
+class _HoverCard extends StatefulWidget {
+  final Widget child;
+  const _HoverCard({required this.child});
+
+  @override
+  State<_HoverCard> createState() => _HoverCardState();
+}
+
+class _HoverCardState extends State<_HoverCard> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        // Efek angkat (Translate Y -10) saat hover
+        transform: _isHovered
+            ? (Matrix4.identity()..translate(0, -10, 0))
+            : Matrix4.identity(),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: _isHovered
+              ? [
+                  // Bayangan tebal saat hover
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.15), // Lebih gelap
+                    blurRadius: 20,
+                    offset: const Offset(0, 10),
+                  ),
+                ]
+              : [
+                  // Bayangan tipis saat normal (atau transparan untuk soft skill)
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+        ),
+        child: widget.child,
+      ),
+    );
+  }
+}
 // --- WIDGET BANTUAN UNTUK KARTU ---
 // (Tetap di dalam file skill_section.dart)
 
-// Kartu untuk Hard Skill (dengan daftar)
 class _HardSkillCard extends StatelessWidget {
   final IconData icon;
   final String title;
@@ -131,51 +178,44 @@ class _HardSkillCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 280, // Lebar kartu
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(icon, color: AppColors.mediumGreen, size: 30),
-          const SizedBox(height: 12),
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: AppColors.darkGreen,
-            ),
-          ),
-          const SizedBox(height: 12),
-          // Ubah daftar String menjadi daftar Widget Text
-          ...skills.map(
-            (skill) => Padding(
-              padding: const EdgeInsets.only(bottom: 4.0),
-              child: Text(
-                '• $skill',
-                style: const TextStyle(color: AppColors.darkGreen, height: 1.5),
+    // Bungkus dengan _HoverCard
+    return _HoverCard(
+      child: Container(
+        width: 280,
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: Colors.white, // Warna kartu
+          borderRadius: BorderRadius.circular(12),
+          // Shadow ditangani oleh _HoverCard, jadi dihapus dari sini
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(icon, color: AppColors.mediumGreen, size: 30),
+            const SizedBox(height: 12),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: AppColors.darkGreen,
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 12),
+            ...skills.map((skill) => Padding(
+                  padding: const EdgeInsets.only(bottom: 4.0),
+                  child: Text(
+                    '• $skill',
+                    style: const TextStyle(color: AppColors.darkGreen, height: 1.5),
+                  ),
+                )),
+          ],
+        ),
       ),
     );
   }
 }
 
-// Kartu untuk Soft Skill (hanya judul)
 class _SoftSkillCard extends StatelessWidget {
   final IconData icon;
   final String title;
@@ -184,29 +224,31 @@ class _SoftSkillCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 220, // Lebar kartu
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        // Desain sedikit berbeda, pakai warna hijau tua
-        color: AppColors.darkGreen,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon, color: Colors.white, size: 40), // Ikon putih
-          const SizedBox(height: 16),
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.white, // Teks putih
+    return _HoverCard(
+      child: Container(
+        width: 220,
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: AppColors.darkGreen, // Warna hijau tua
+          borderRadius: BorderRadius.circular(12),
+          // Shadow ditangani oleh _HoverCard
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, color: Colors.white, size: 40),
+            const SizedBox(height: 16),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
