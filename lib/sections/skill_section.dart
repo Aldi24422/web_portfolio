@@ -8,14 +8,12 @@ class SkillSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // Latar belakang kembali ke warna krem
       color: AppColors.offWhite,
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 20.0),
-
+      
       child: Column(
         children: [
-          // JUDUL UTAMA
           const Text(
             'Keterampilan',
             style: TextStyle(
@@ -24,20 +22,14 @@ class SkillSection extends StatelessWidget {
               color: AppColors.darkGreen,
             ),
           ),
-
+          
           const SizedBox(height: 50),
 
-          // Kita batasi lebar totalnya
           ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 1000,
-            ), // Lebar maks 1000px
+            constraints: const BoxConstraints(maxWidth: 1000),
             child: Column(
-              crossAxisAlignment: isMobile
-                  ? CrossAxisAlignment.center
-                  : CrossAxisAlignment.start,
+              crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
               children: [
-                // SUB-JUDUL Hard Skill
                 const Text(
                   'Hard Skill',
                   style: TextStyle(
@@ -46,36 +38,36 @@ class SkillSection extends StatelessWidget {
                     color: AppColors.mediumGreen,
                   ),
                 ),
-
+                
                 const SizedBox(height: 20),
 
                 // Baris untuk Hard Skill
                 Wrap(
-                  spacing: 20, // Jarak horizontal antar kartu
-                  runSpacing: 20, // Jarak vertikal antar kartu
+                  spacing: 20,
+                  runSpacing: 20,
                   alignment: WrapAlignment.center,
                   children: [
+                    // FIXED: Menghapus 'const' di sini
                     _HardSkillCard(
-                      icon: Icons.design_services, // Placeholder ikon
+                      icon: Icons.design_services,
                       title: 'Desain Grafis',
-                      skills: ['Figma', 'Lightroom', 'Flutterflow', 'Snapseed'],
+                      skills: const ['Figma', 'Lightroom', 'Flutterflow', 'Snapseed'],
                     ),
                     _HardSkillCard(
-                      icon: Icons.code, // Placeholder ikon
+                      icon: Icons.code,
                       title: 'Pemrograman',
-                      skills: ['Dart', 'Python', 'C++', 'PHP', 'HTML & CSS'],
+                      skills: const ['Dart', 'Python', 'C++', 'PHP', 'HTML & CSS'],
                     ),
                     _HardSkillCard(
-                      icon: Icons.data_usage, // Placeholder ikon
+                      icon: Icons.data_usage,
                       title: 'Pengolahan Data',
-                      skills: ['Ms. Office Word', 'Ms. Excel', 'Firestore'],
+                      skills: const ['Ms. Office Word', 'Ms. Excel', 'Firestore'],
                     ),
                   ],
                 ),
 
                 const SizedBox(height: 50),
 
-                // SUB-JUDUL Soft Skill
                 const Text(
                   'Soft Skill',
                   style: TextStyle(
@@ -93,16 +85,23 @@ class SkillSection extends StatelessWidget {
                   runSpacing: 20,
                   alignment: WrapAlignment.center,
                   children: [
-                    _SoftSkillCard(icon: Icons.timer, title: 'Manajemen Waktu'),
-                    _SoftSkillCard(
-                      icon: Icons.sync_alt,
+                    // FIXED: Menghapus 'const' di sini
+                    const _SoftSkillCard(
+                      icon: Icons.timer, 
+                      title: 'Manajemen Waktu',
+                    ),
+                    const _SoftSkillCard(
+                      icon: Icons.sync_alt, 
                       title: 'Mudah Beradaptasi',
                     ),
-                    _SoftSkillCard(
-                      icon: Icons.chat,
+                    const _SoftSkillCard(
+                      icon: Icons.chat, 
                       title: 'Komunikasi Efektif',
                     ),
-                    _SoftSkillCard(icon: Icons.people, title: 'Kerjasama Tim'),
+                    const _SoftSkillCard(
+                      icon: Icons.people, 
+                      title: 'Kerjasama Tim',
+                    ),
                   ],
                 ),
               ],
@@ -114,7 +113,9 @@ class SkillSection extends StatelessWidget {
   }
 }
 
-// --- WIDGET BARU: PEMBUNGKUS ANIMASI KARTU ---
+// --- WIDGET BANTUAN UNTUK KARTU & HOVER ---
+
+// Widget Pembungkus Animasi Hover
 class _HoverCard extends StatefulWidget {
   final Widget child;
   const _HoverCard({required this.child});
@@ -128,33 +129,31 @@ class _HoverCardState extends State<_HoverCard> {
 
   @override
   Widget build(BuildContext context) {
+    // Menggunakan Matrix4.translationValues (non-deprecated)
+    final transform = _isHovered ? Matrix4.translationValues(0.0, -10.0, 0.0) : Matrix4.identity();
+
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        // Efek angkat (Translate Y -10) saat hover
-        transform: _isHovered
-            ? (Matrix4.identity()..translate(0, -10, 0))
-            : Matrix4.identity(),
+        transform: transform,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           boxShadow: _isHovered
-              ? [
-                  // Bayangan tebal saat hover
+              ? const [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.15), // Lebih gelap
+                    color: Color.fromRGBO(0, 0, 0, 0.15),
                     blurRadius: 20,
-                    offset: const Offset(0, 10),
-                  ),
+                    offset: Offset(0, 10),
+                  )
                 ]
-              : [
-                  // Bayangan tipis saat normal (atau transparan untuk soft skill)
+              : const [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Color.fromRGBO(0, 0, 0, 0.05),
                     blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  ),
+                    offset: Offset(0, 4),
+                  )
                 ],
         ),
         child: widget.child,
@@ -162,14 +161,14 @@ class _HoverCardState extends State<_HoverCard> {
     );
   }
 }
-// --- WIDGET BANTUAN UNTUK KARTU ---
-// (Tetap di dalam file skill_section.dart)
 
+// Kartu untuk Hard Skill (dengan daftar)
 class _HardSkillCard extends StatelessWidget {
   final IconData icon;
   final String title;
   final List<String> skills;
 
+  // FIXED: Menghapus 'const' dari constructor
   const _HardSkillCard({
     required this.icon,
     required this.title,
@@ -178,15 +177,13 @@ class _HardSkillCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Bungkus dengan _HoverCard
     return _HoverCard(
-      child: Container(
-        width: 280,
+        child: Container(
+        width: 280, 
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
-          color: Colors.white, // Warna kartu
+          color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          // Shadow ditangani oleh _HoverCard, jadi dihapus dari sini
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -216,37 +213,40 @@ class _HardSkillCard extends StatelessWidget {
   }
 }
 
+// Kartu untuk Soft Skill (hanya judul)
 class _SoftSkillCard extends StatelessWidget {
   final IconData icon;
   final String title;
 
+  // FIXED: Menghapus 'const' dari constructor
   const _SoftSkillCard({required this.icon, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return _HoverCard(
       child: Container(
-        width: 220,
+        width: 220, 
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
-          color: AppColors.darkGreen, // Warna hijau tua
+          color: AppColors.darkGreen, 
           borderRadius: BorderRadius.circular(12),
-          // Shadow ditangani oleh _HoverCard
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: Colors.white, size: 40),
+            const SizedBox(height: 10),
+            Icon(icon, color: Colors.white, size: 40), 
             const SizedBox(height: 16),
             Text(
               title,
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.white, 
               ),
               textAlign: TextAlign.center,
             ),
+            const SizedBox(height: 10),
           ],
         ),
       ),

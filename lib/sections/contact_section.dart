@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart'; 
 import 'package:web_portfolio/app_colors.dart';
+import 'package:web_portfolio/utils/url_service.dart';
 
 class ContactSection extends StatelessWidget {
-  // 1. Menerima isMobile
   final bool isMobile;
   const ContactSection({super.key, this.isMobile = false});
 
@@ -10,7 +11,7 @@ class ContactSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: AppColors.darkGreen, // Latar belakang hijau tua
+      color: AppColors.darkGreen,
       padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 20.0),
       child: Column(
         children: [
@@ -19,7 +20,7 @@ class ContactSection extends StatelessWidget {
             style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
-              color: Colors.white, // Teks putih
+              color: Colors.white,
             ),
           ),
           const SizedBox(height: 30),
@@ -27,55 +28,50 @@ class ContactSection extends StatelessWidget {
             'Jangan ragu untuk menghubungi saya!',
             style: TextStyle(
               fontSize: 16,
-              color: AppColors.beige, // Teks beige
+              color: AppColors.beige,
             ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 40),
 
-          // Baris tombol kontak
           Wrap(
             alignment: WrapAlignment.center,
-            spacing: 20, // Jarak horizontal
-            runSpacing: 20, // Jarak vertikal
+            spacing: 20,
+            runSpacing: 20,
             children: [
               _ContactButton(
-                icon: Icons.email,
-                text: 'azizrizaldi18@gmail.com',
-                onPressed: () {},
+                icon: const Icon(Icons.email, color: AppColors.offWhite, size: 20),
+                text: emailAddress,
+                onPressed: launchEmail,
               ),
               _ContactButton(
-                icon: Icons.phone,
-                text: '+62 812-5280-1386',
-                onPressed: () {},
+                icon: const Icon(Icons.phone, color: AppColors.offWhite, size: 20),
+                text: phoneNumber,
+                onPressed: launchPhone,
               ),
               _ContactButton(
-                icon: Icons.link, // Placeholder untuk LinkedIn
+                // Menggunakan FaIcon untuk LinkedIn
+                icon: const FaIcon(FontAwesomeIcons.linkedin, color: AppColors.offWhite, size: 20),
                 text: 'LinkedIn',
-                onPressed: () {},
+                onPressed: () => launchUrlService(linkedInUrl),
               ),
               _ContactButton(
-                icon: Icons.camera_alt, // Placeholder untuk Instagram
+                // Menggunakan FaIcon untuk Instagram
+                icon: const FaIcon(FontAwesomeIcons.instagram, color: AppColors.offWhite, size: 20),
                 text: 'azizrizaldi_',
-                onPressed: () {},
+                onPressed: () => launchUrlService(instagramUrl),
               ),
             ],
           ),
-
-          const SizedBox(height: 60),
-          const Text(
-            'Dibuat dengan Flutter',
-            style: TextStyle(color: AppColors.mediumGreen),
-          ),
+          // Bagian teks "Dibuat dengan Flutter" sudah dihapus
         ],
       ),
     );
   }
 }
 
-// Widget Bantuan Tombol Kontak (di file yang sama)
 class _ContactButton extends StatelessWidget {
-  final IconData icon;
+  final Widget icon; 
   final String text;
   final VoidCallback onPressed;
 
@@ -88,13 +84,15 @@ class _ContactButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton.icon(
-      icon: Icon(icon, color: AppColors.offWhite),
+      icon: icon, 
       label: Text(text, style: const TextStyle(color: AppColors.offWhite)),
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         side: const BorderSide(color: AppColors.mediumGreen),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
       ),
     );
   }

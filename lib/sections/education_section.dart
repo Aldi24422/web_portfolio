@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:web_portfolio/app_colors.dart';
 
 class EducationSection extends StatelessWidget {
-  // 1. Menerima isMobile
   final bool isMobile;
   const EducationSection({super.key, this.isMobile = false});
 
   @override
   Widget build(BuildContext context) {
-    // Daftar sertifikasi dari PDF
-    final sertifikasi = [
+    // Daftar sertifikasi dari CV
+    final sertifikasi = const [
       'Enterprise Systems (University of Minnesota)',
       'Flutter Masterclass (Udemy)',
       'Flutterflow App Development (Udemy)',
@@ -18,7 +17,7 @@ class EducationSection extends StatelessWidget {
     ];
 
     return Container(
-      color: AppColors.offWhite, // Latar belakang krem
+      color: AppColors.offWhite,
       padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 20.0),
       child: Column(
         children: [
@@ -35,17 +34,16 @@ class EducationSection extends StatelessWidget {
             constraints: const BoxConstraints(maxWidth: 1000),
             child: Wrap(
               alignment: WrapAlignment.center,
-              spacing: 40, // Jarak horizontal
-              runSpacing: 40, // Jarak vertikal
+              spacing: 40,
+              runSpacing: 40,
               children: [
-                // KARTU PENDIDIKAN
                 _InfoCard(
-                  isMobile: isMobile, // 2. Mengirim isMobile
+                  isMobile: isMobile,
                   title: 'Pendidikan',
                   icon: Icons.school,
-                  child: Column(
+                  child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [ // Bisa const karena isinya statis
+                    children: [
                       Text(
                         'S1 Teknik Informatika',
                         style: TextStyle(
@@ -68,9 +66,8 @@ class EducationSection extends StatelessWidget {
                   ),
                 ),
 
-                // KARTU SERTIFIKASI
                 _InfoCard(
-                  isMobile: isMobile, // 2. Mengirim isMobile
+                  isMobile: isMobile,
                   title: 'Sertifikasi',
                   icon: Icons.card_membership,
                   child: Column(
@@ -84,7 +81,7 @@ class EducationSection extends StatelessWidget {
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: Text(
-                                      item,
+                                      item, // FIXED: Menghapus interpolasi string yang tidak perlu
                                       style: const TextStyle(color: AppColors.darkGreen),
                                     ),
                                   ),
@@ -108,29 +105,33 @@ class _InfoCard extends StatelessWidget {
   final String title;
   final IconData icon;
   final Widget child;
-  final bool isMobile; // 3. Menerima isMobile
+  final bool isMobile; 
 
   const _InfoCard({
     required this.title,
     required this.icon,
     required this.child,
-    this.isMobile = false, // Default value
+    this.isMobile = false, 
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // 4. Menggunakan isMobile untuk mengatur lebar
       width: isMobile ? double.infinity : 450, 
       padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(12),
+          topRight: Radius.circular(12),
+          bottomLeft: Radius.circular(12),
+          bottomRight: Radius.circular(12),
+        ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Color.fromRGBO(0, 0, 0, 0.05),
             blurRadius: 10,
-            offset: const Offset(0, 4),
+            offset: Offset(0, 4),
           ),
         ],
       ),

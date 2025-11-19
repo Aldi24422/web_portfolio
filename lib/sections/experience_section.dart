@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:web_portfolio/app_colors.dart';
 
 class ExperienceSection extends StatelessWidget {
-  // 1. Menerima isMobile
+  // Menerima isMobile
   final bool isMobile;
   const ExperienceSection({super.key, this.isMobile = false});
 
   @override
   Widget build(BuildContext context) {
-    // 1. DefaultTabController adalah widget yang mengelola
-    //    semua logika TabBar (mengatur tab mana yang aktif)
+    // DefaultTabController adalah widget yang mengelola semua logika TabBar
     return DefaultTabController(
       length: 3, // Kita punya 3 tab
       child: Container(
         color: AppColors.beige, // Latar belakang beige
-        // 2. Padding dibuat responsif
+        // Padding dibuat responsif
         padding: EdgeInsets.symmetric(vertical: 60.0, horizontal: isMobile ? 20.0 : 40.0),
         child: Column(
           children: [
@@ -29,12 +28,12 @@ class ExperienceSection extends StatelessWidget {
             ),
             const SizedBox(height: 30),
 
-            // 3. TabBar dibuat scrollable (dan const dihapus)
+            // TabBar (const dihapus karena isScrollable adalah variabel)
             TabBar(
-              isScrollable: isMobile,
-              labelColor: AppColors.darkGreen, // Warna teks tab aktif
-              unselectedLabelColor: Colors.grey, // Warna teks tab non-aktif
-              indicatorColor: AppColors.mediumGreen, // Warna garis bawah
+              isScrollable: isMobile, // TabBar bisa di-scroll di mobile
+              labelColor: AppColors.darkGreen, 
+              unselectedLabelColor: Colors.grey, 
+              indicatorColor: AppColors.mediumGreen, 
               indicatorWeight: 3.0,
               tabs: const [
                 Tab(child: Text('Pengalaman Kerja', style: TextStyle(fontWeight: FontWeight.bold))),
@@ -45,12 +44,12 @@ class ExperienceSection extends StatelessWidget {
             
             const SizedBox(height: 30),
 
-            // 4. Konten dari setiap tab
+            // Konten dari setiap tab (TabBarView)
             Container(
-              // 5. Tinggi TabView dibuat responsif
+              // Tinggi TabView dibuat responsif
               height: isMobile ? 550 : 500,
               constraints: const BoxConstraints(maxWidth: 800), // Batasi lebar
-              // 6. const dihapus dan isMobile dikirim ke Tabs
+              // isMobile dikirim ke Tabs
               child: TabBarView(
                 children: [
                   _WorkTab(isMobile: isMobile),
@@ -68,9 +67,8 @@ class ExperienceSection extends StatelessWidget {
 
 // --- WIDGET KONTEN UNTUK SETIAP TAB ---
 
-// --- KONTEN TAB 1: PENGALAMAN KERJA ---
+// Tab 1: Pengalaman Kerja
 class _WorkTab extends StatelessWidget {
-  // 7. Menerima & mengirim isMobile
   final bool isMobile;
   const _WorkTab({this.isMobile = false});
 
@@ -79,11 +77,11 @@ class _WorkTab extends StatelessWidget {
     return ListView(
       children: [
         _ExperienceCard(
-          isMobile: isMobile, // Kirim ke kartu
+          isMobile: isMobile,
           title: 'Application Developer (MSIB)',
           subtitle: 'Disdukcapil Surabaya',
           date: 'Agustus 2024 - Januari 2025',
-          details: [
+          details: const [
             'Mengintegrasikan WhatsApp API ke dalam aplikasi web pengaduan publik.',
             'Mendesain ulang total UI aplikasi menjadi lebih modern dan intuitif.',
             'Mengoptimalkan algoritma backend untuk balasan otomatis yang lebih cepat.',
@@ -91,11 +89,11 @@ class _WorkTab extends StatelessWidget {
           ],
         ),
         _ExperienceCard(
-          isMobile: isMobile, // Kirim ke kartu
+          isMobile: isMobile,
           title: 'Application Developer & IT Support (Magang)',
           subtitle: 'PT Sucofindo',
           date: 'Januari - April 2024',
-          details: [
+          details: const [
             'Mengembangkan aplikasi berbasis web (progressive) : Asset Maintenance.',
             'Installing Ms Office, installing, reinstalling, dan updating windows.',
             'Setup perangkat PC dan laptop baru.',
@@ -107,9 +105,8 @@ class _WorkTab extends StatelessWidget {
   }
 }
 
-// --- KONTEN TAB 2: PENGALAMAN PROYEK ---
+// Tab 2: Pengalaman Proyek
 class _ProjectTab extends StatelessWidget {
-  // 8. Menerima & mengirim isMobile
   final bool isMobile;
   const _ProjectTab({this.isMobile = false});
 
@@ -118,29 +115,29 @@ class _ProjectTab extends StatelessWidget {
     return ListView(
       children: [
          _ExperienceCard(
-          isMobile: isMobile, // Kirim ke kartu
+          isMobile: isMobile,
           title: 'Aplikasi Asset Monitoring pada PT Sucofindo',
           subtitle: 'Peran: Low Code Developer',
           date: 'Januari - April 2024',
-          details: [
+          details: const [
             'Mengembangkan aplikasi berbasis web (progressive web) menggunakan Flutterflow dengan integrasi back-end Firebase.'
           ],
         ),
         _ExperienceCard(
-          isMobile: isMobile, // Kirim ke kartu
+          isMobile: isMobile,
           title: 'Aplikasi Stok Barang pada CV. Aldi Printing',
           subtitle: 'Peran: Low Code Developer',
           date: 'November 2023',
-          details: [
+          details: const [
             'Mengembangkan aplikasi berbasis web menggunakan Flutterflow dengan integrasi back-end Firebase.'
           ],
         ),
         _ExperienceCard(
-          isMobile: isMobile, // Kirim ke kartu
+          isMobile: isMobile,
           title: 'Aplikasi Janji Temu Dosen dan Mahasiswa',
           subtitle: 'Peran: Analis Sistem',
           date: 'Oktober - Desember 2023',
-          details: [
+          details: const [
             'Menganalisis kebutuhan bisnis dan fungsional.',
             'Merancang dan mengelola basis data yang diperlukan untuk aplikasi.',
           ],
@@ -150,9 +147,8 @@ class _ProjectTab extends StatelessWidget {
   }
 }
 
-// --- KONTEN TAB 3: PROFESIONAL ---
+// Tab 3: Profesional
 class _ProfessionalTab extends StatelessWidget {
-  // 9. Menerima & mengirim isMobile
   final bool isMobile;
   const _ProfessionalTab({this.isMobile = false});
 
@@ -161,25 +157,25 @@ class _ProfessionalTab extends StatelessWidget {
     return ListView(
       children: [
         _ExperienceCard(
-          isMobile: isMobile, // Kirim ke kartu
+          isMobile: isMobile,
           title: 'Tim PORPROV IX Jatim',
           subtitle: 'Peran: Tim Panitia Pelaksana Cabor Kurash bidang IT',
           date: 'Juni 2025',
-          details: [],
+          details: const [],
         ),
          _ExperienceCard(
-          isMobile: isMobile, // Kirim ke kartu
+          isMobile: isMobile,
           title: 'Tim PORPROV VIII Jatim',
           subtitle: 'Peran: Atlet Cabor Kurash Kota Surabaya',
           date: 'September 2023',
-          details: [],
+          details: const [],
         ),
         _ExperienceCard(
-          isMobile: isMobile, // Kirim ke kartu
+          isMobile: isMobile,
           title: 'Tim PORPROV VII Jatim',
           subtitle: 'Peran: Atlet Cabor Woodball Kota Surabaya',
           date: 'Juni 2022',
-          details: [],
+          details: const [],
         ),
       ],
     );
@@ -189,7 +185,6 @@ class _ProfessionalTab extends StatelessWidget {
 
 // --- WIDGET KARTU BANTUAN YANG DIPAKAI ULANG ---
 class _ExperienceCard extends StatelessWidget {
-  // 10. Menerima isMobile
   final bool isMobile;
   final String title;
   final String subtitle;
@@ -197,7 +192,7 @@ class _ExperienceCard extends StatelessWidget {
   final List<String> details;
 
   const _ExperienceCard({
-    this.isMobile = false, // Default ke false
+    this.isMobile = false,
     required this.title,
     required this.subtitle,
     required this.date,
@@ -208,22 +203,23 @@ class _ExperienceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
-      margin: const EdgeInsets.only(bottom: 20), // Jarak antar kartu
+      margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            // FIXED: Menggunakan const Color.fromRGBO untuk mengatasi withOpacity
+            color: Color.fromRGBO(0, 0, 0, 0.05),
             blurRadius: 10,
-            offset: const Offset(0, 4),
+            offset: Offset(0, 4),
           ),
         ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // 11. Logika responsif untuk Judul/Tanggal
+          // Logika responsif untuk Judul/Tanggal
           isMobile
               ? Column( // Tampilan Mobile: Kolom
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -266,8 +262,6 @@ class _ExperienceCard extends StatelessWidget {
     );
   }
 }
-
-// --- WIDGET BANTUAN BARU ---
 
 // Widget bantuan untuk Judul & Subjudul
 class _TitleBlock extends StatelessWidget {
