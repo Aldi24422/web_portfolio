@@ -6,6 +6,7 @@ import 'package:web_portfolio/widgets/mobile_drawer.dart';
 import 'package:web_portfolio/sections/hero_section.dart';
 import 'package:web_portfolio/sections/about_section.dart';
 import 'package:web_portfolio/sections/skill_section.dart';
+import 'package:web_portfolio/sections/projects_section.dart';
 import 'package:web_portfolio/sections/experience_section.dart';
 import 'package:web_portfolio/sections/education_section.dart';
 import 'package:web_portfolio/sections/contact_section.dart';
@@ -21,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey heroKey = GlobalKey();
   final GlobalKey aboutKey = GlobalKey();
   final GlobalKey skillsKey = GlobalKey();
+  final GlobalKey projectsKey = GlobalKey();
   final GlobalKey experienceKey = GlobalKey();
   final GlobalKey educationKey = GlobalKey();
   final GlobalKey contactKey = GlobalKey();
@@ -45,6 +47,7 @@ class _HomePageState extends State<HomePage> {
       'hero': heroKey,
       'about': aboutKey,
       'skills': skillsKey,
+      'projects': projectsKey,
       'experience': experienceKey,
       'education': educationKey,
       'contact': contactKey,
@@ -72,25 +75,19 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 )
-              : DesktopAppBar(
-                  keys: sectionKeys,
-                  onScroll: scrollToSection,
-                ),
+              : DesktopAppBar(keys: sectionKeys, onScroll: scrollToSection),
           drawer: isMobile
-              ? MobileDrawer(
-                  keys: sectionKeys,
-                  onScroll: scrollToSection,
-                )
+              ? MobileDrawer(keys: sectionKeys, onScroll: scrollToSection)
               : null,
           body: SingleChildScrollView(
             child: Column(
               children: [
                 // UPDATE DI SINI: Menambahkan onContactTap
                 HeroSection(
-                  key: heroKey, 
-                  isMobile: isMobile,
-                  onContactTap: () => scrollToSection(contactKey), 
-                )
+                      key: heroKey,
+                      isMobile: isMobile,
+                      onContactTap: () => scrollToSection(contactKey),
+                    )
                     .animate()
                     .fadeIn(duration: 600.ms)
                     .slideY(begin: 0.3, end: 0, curve: Curves.easeOut),
@@ -103,6 +100,11 @@ class _HomePageState extends State<HomePage> {
                 SkillSection(key: skillsKey, isMobile: isMobile)
                     .animate()
                     .fadeIn(duration: 600.ms, delay: 400.ms)
+                    .slideY(begin: 0.3, end: 0, curve: Curves.easeOut),
+
+                ProjectsSection(key: projectsKey, isMobile: isMobile)
+                    .animate()
+                    .fadeIn(duration: 600.ms, delay: 500.ms)
                     .slideY(begin: 0.3, end: 0, curve: Curves.easeOut),
 
                 ExperienceSection(key: experienceKey, isMobile: isMobile)

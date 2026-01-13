@@ -37,6 +37,10 @@ class DesktopAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () => onScroll(keys['skills']!),
         ),
         _AppBarButton(
+          text: 'Karya',
+          onPressed: () => onScroll(keys['projects']!),
+        ),
+        _AppBarButton(
           text: 'Pengalaman',
           onPressed: () => onScroll(keys['experience']!),
         ),

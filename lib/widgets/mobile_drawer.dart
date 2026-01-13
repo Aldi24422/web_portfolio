@@ -43,6 +43,11 @@ class MobileDrawer extends StatelessWidget {
             onTap: () => onScroll(keys['skills']!),
           ),
           _DrawerTile(
+            text: 'Karya',
+            icon: Icons.work_outline,
+            onTap: () => onScroll(keys['projects']!),
+          ),
+          _DrawerTile(
             text: 'Pengalaman',
             icon: Icons.work,
             onTap: () => onScroll(keys['experience']!),

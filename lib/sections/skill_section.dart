@@ -11,7 +11,7 @@ class SkillSection extends StatelessWidget {
       color: AppColors.offWhite,
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 20.0),
-      
+
       child: Column(
         children: [
           const Text(
@@ -22,13 +22,15 @@ class SkillSection extends StatelessWidget {
               color: AppColors.darkGreen,
             ),
           ),
-          
+
           const SizedBox(height: 50),
 
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1000),
             child: Column(
-              crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+              crossAxisAlignment: isMobile
+                  ? CrossAxisAlignment.center
+                  : CrossAxisAlignment.start,
               children: [
                 const Text(
                   'Hard Skill',
@@ -38,7 +40,7 @@ class SkillSection extends StatelessWidget {
                     color: AppColors.mediumGreen,
                   ),
                 ),
-                
+
                 const SizedBox(height: 20),
 
                 // Baris untuk Hard Skill
@@ -47,21 +49,36 @@ class SkillSection extends StatelessWidget {
                   runSpacing: 20,
                   alignment: WrapAlignment.center,
                   children: [
-                    // FIXED: Menghapus 'const' di sini
                     _HardSkillCard(
-                      icon: Icons.design_services,
-                      title: 'Desain Grafis',
-                      skills: const ['Figma', 'Lightroom', 'Flutterflow', 'Snapseed'],
+                      icon: Icons.smartphone,
+                      title: 'Mobile & App Engineering',
+                      skills: const [
+                        'Flutter & Dart Expert (Cross-platform Android/iOS/Web)',
+                        'Native Integration (Dart FFI & C++ Libs)',
+                        'Hardware Connectivity (Bluetooth Thermal Printer/ESC POS)',
+                        'Advanced UI (Custom Painters & Complex Animations)',
+                        'Architecture (Clean Arch, MVVM, Offline-first SQLite)',
+                      ],
                     ),
                     _HardSkillCard(
-                      icon: Icons.code,
-                      title: 'Pemrograman',
-                      skills: const ['Dart', 'Python', 'C++', 'PHP', 'HTML & CSS'],
+                      icon: Icons.cloud,
+                      title: 'Backend & Cloud Infrastructure',
+                      skills: const [
+                        'Firebase Ecosystem (Firestore NoSQL, Auth, Cloud Functions)',
+                        'DevOps & CI/CD (Git Flow & GitHub Actions)',
+                        'API Management (RESTful Integration & Postman)',
+                        'Database Modeling (SQL & NoSQL Structures)',
+                      ],
                     ),
                     _HardSkillCard(
-                      icon: Icons.data_usage,
-                      title: 'Pengolahan Data',
-                      skills: const ['Ms. Office Word', 'Ms. Excel', 'Firestore'],
+                      icon: Icons.extension,
+                      title: 'Web Automation & Scripting',
+                      skills: const [
+                        'Browser Automation (Chrome Extension Manifest V3)',
+                        'Core Web Tech (JavaScript ES6+, HTML5, CSS3, DOM)',
+                        'Data Processing (Excel/CSV Parsing & Async Queues)',
+                        'Workflow Scripting (Automated Data Entry & Scraping)',
+                      ],
                     ),
                   ],
                 ),
@@ -87,19 +104,19 @@ class SkillSection extends StatelessWidget {
                   children: [
                     // FIXED: Menghapus 'const' di sini
                     const _SoftSkillCard(
-                      icon: Icons.timer, 
+                      icon: Icons.timer,
                       title: 'Manajemen Waktu',
                     ),
                     const _SoftSkillCard(
-                      icon: Icons.sync_alt, 
+                      icon: Icons.sync_alt,
                       title: 'Mudah Beradaptasi',
                     ),
                     const _SoftSkillCard(
-                      icon: Icons.chat, 
+                      icon: Icons.chat,
                       title: 'Komunikasi Efektif',
                     ),
                     const _SoftSkillCard(
-                      icon: Icons.people, 
+                      icon: Icons.people,
                       title: 'Kerjasama Tim',
                     ),
                   ],
@@ -130,7 +147,9 @@ class _HoverCardState extends State<_HoverCard> {
   @override
   Widget build(BuildContext context) {
     // Menggunakan Matrix4.translationValues (non-deprecated)
-    final transform = _isHovered ? Matrix4.translationValues(0.0, -10.0, 0.0) : Matrix4.identity();
+    final transform = _isHovered
+        ? Matrix4.translationValues(0.0, -10.0, 0.0)
+        : Matrix4.identity();
 
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
@@ -146,14 +165,14 @@ class _HoverCardState extends State<_HoverCard> {
                     color: Color.fromRGBO(0, 0, 0, 0.15),
                     blurRadius: 20,
                     offset: Offset(0, 10),
-                  )
+                  ),
                 ]
               : const [
                   BoxShadow(
                     color: Color.fromRGBO(0, 0, 0, 0.05),
                     blurRadius: 10,
                     offset: Offset(0, 4),
-                  )
+                  ),
                 ],
         ),
         child: widget.child,
@@ -168,7 +187,6 @@ class _HardSkillCard extends StatelessWidget {
   final String title;
   final List<String> skills;
 
-  // FIXED: Menghapus 'const' dari constructor
   const _HardSkillCard({
     required this.icon,
     required this.title,
@@ -178,8 +196,9 @@ class _HardSkillCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _HoverCard(
-        child: Container(
-        width: 280, 
+      child: Container(
+        width: 320,
+        constraints: const BoxConstraints(minHeight: 320),
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -187,9 +206,18 @@ class _HardSkillCard extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, color: AppColors.mediumGreen, size: 30),
-            const SizedBox(height: 12),
+            // Icon with background
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: AppColors.mediumGreen.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(icon, color: AppColors.mediumGreen, size: 28),
+            ),
+            const SizedBox(height: 16),
             Text(
               title,
               style: const TextStyle(
@@ -198,14 +226,33 @@ class _HardSkillCard extends StatelessWidget {
                 color: AppColors.darkGreen,
               ),
             ),
-            const SizedBox(height: 12),
-            ...skills.map((skill) => Padding(
-                  padding: const EdgeInsets.only(bottom: 4.0),
-                  child: Text(
-                    '• $skill',
-                    style: const TextStyle(color: AppColors.darkGreen, height: 1.5),
-                  ),
-                )),
+            const SizedBox(height: 16),
+            ...skills.map(
+              (skill) => Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(
+                      Icons.check_circle,
+                      size: 16,
+                      color: AppColors.mediumGreen,
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        skill,
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: AppColors.darkGreen,
+                          height: 1.4,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -225,24 +272,24 @@ class _SoftSkillCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return _HoverCard(
       child: Container(
-        width: 220, 
+        width: 220,
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
-          color: AppColors.darkGreen, 
+          color: AppColors.darkGreen,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 10),
-            Icon(icon, color: Colors.white, size: 40), 
+            Icon(icon, color: Colors.white, size: 40),
             const SizedBox(height: 16),
             Text(
               title,
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.white, 
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
