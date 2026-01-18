@@ -99,8 +99,11 @@ class _DesktopLayout extends StatelessWidget {
 
                       const SizedBox(height: 10),
 
-                      Text(
-                        'MOBILE APPLICATION DEVELOPER | SOFTWARE ENGINEER',
+                      _TypewriterText(
+                        texts: const [
+                          'MOBILE APPLICATION DEVELOPER',
+                          'SOFTWARE ENGINEER',
+                        ],
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.w500,
@@ -185,8 +188,8 @@ class _MobileLayout extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
-          Text(
-            'Application Developer / IT Support',
+          _TypewriterText(
+            texts: const ['MOBILE APPLICATION DEVELOPER', 'SOFTWARE ENGINEER'],
             style: TextStyle(fontSize: 18, color: Colors.grey[600]),
             textAlign: TextAlign.center,
           ),
@@ -373,4 +376,80 @@ class _DiagonalBackgroundPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class _TypewriterText extends StatefulWidget {
+  final List<String> texts;
+  final TextStyle style;
+  final TextAlign textAlign;
+
+  const _TypewriterText({
+    required this.texts,
+    required this.style,
+    this.textAlign = TextAlign.start,
+  });
+
+  @override
+  State<_TypewriterText> createState() => _TypewriterTextState();
+}
+
+class _TypewriterTextState extends State<_TypewriterText> {
+  String _currentText = "";
+  int _currentIndex = 0;
+  int _charIndex = 0;
+  bool _isBackspacing = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _startTyping();
+  }
+
+  void _startTyping() {
+    _typeNext();
+  }
+
+  void _typeNext() {
+    if (!mounted) return;
+
+    if (_isBackspacing) {
+      if (_charIndex > 0) {
+        setState(() {
+          _charIndex--;
+          _currentText = widget.texts[_currentIndex].substring(0, _charIndex);
+        });
+        Future.delayed(const Duration(milliseconds: 30), _typeNext);
+      } else {
+        _isBackspacing = false;
+        _currentIndex = (_currentIndex + 1) % widget.texts.length;
+        Future.delayed(const Duration(milliseconds: 100), _typeNext);
+      }
+    } else {
+      if (_charIndex < widget.texts[_currentIndex].length) {
+        setState(() {
+          _charIndex++;
+          _currentText = widget.texts[_currentIndex].substring(0, _charIndex);
+        });
+        Future.delayed(const Duration(milliseconds: 50), _typeNext);
+      } else {
+        _isBackspacing = true;
+        Future.delayed(const Duration(milliseconds: 1200), _typeNext);
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    // No explicit cancel needed for Future.delayed but good to be safe if we had a Timer
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "$_currentText|",
+      style: widget.style,
+      textAlign: widget.textAlign,
+    );
+  }
 }
