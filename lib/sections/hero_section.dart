@@ -100,7 +100,7 @@ class _DesktopLayout extends StatelessWidget {
                       const SizedBox(height: 10),
 
                       Text(
-                        'Application Developer / IT Support',
+                        'MOBILE APPLICATION DEVELOPER | SOFTWARE ENGINEER',
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.w500,
