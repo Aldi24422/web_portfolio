@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | M. Aziz Rizaldi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Dev<span>Portfolio</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item active" data-i18n="nav_home">Home</a></li>
+            <li><a href="#about" class="nav-item" data-i18n="nav_about">About</a></li>
+            <li><a href="#skills" class="nav-item" data-i18n="nav_skills">Skills</a></li>
+            <li><a href="#projects" class="nav-item" data-i18n="nav_projects">Projects</a></li>
+            <li><a href="#experience" class="nav-item" data-i18n="nav_experience">Experience</a></li>
+            <li><a href="#certificates" class="nav-item" data-i18n="nav_experience">Certificates</a></li>
+            <li><a href="#contact" class="nav-item" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button id="lang-switch" class="lang-btn">EN / ID</button>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero relative">
+        <div class="blur-circle hero-blur"></div>
+        <div class="hero-container">
+            <div class="hero-text slide-in-left">
+                <h1 class="headline" data-i18n="hero_title">Fullstack Developer</h1>
+                <p class="subheadline" data-i18n="hero_subtitle"> crafting clean, efficient, and
+                    scalable web applications.</p>
+                <div class="profile-info">
+                    <h2><span data-i18n="hero_greeting">Hi, I'm</span> <span class="highlight"
+                            style="color: var(--accent-blue);">M. Aziz Rizaldi</span></h2>
+                    <h3 data-i18n="hero_role">Web Apps Developer (Fullstack Developer)</h3>
+                </div>
+                <a href="#projects" class="btn primary-btn" data-i18n="btn_work">View My Work</a>
+            </div>
+            <div class="hero-image slide-in-right">
+                <div class="hero-img-box">
+                    <img src="FotoAldi.png" alt="M. Aziz Rizaldi - Web Developer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about relative">
+        <div class="blur-circle"></div>
+        <h2 class="section-title fade-in" data-i18n="about_title">About Me</h2>
+        <div class="about-container">
+            <div class="about-left slide-in-left">
+                <div class="about-image-wrapper">
+                    <img src="FotoAziz.jpeg" alt="Developer Illustration">
+                </div>
+            </div>
+            <div class="about-right slide-in-right">
+                <p data-i18n="about_p1">I am an Informatics Engineering graduate and a versatile Developer with 4 years
+                    of experience building end-to-end digital solutions. I specialize in integrating robust backend
+                    services with seamless cloud data management to create high-performance web and mobile applications.
+                </p>
+                <p data-i18n="about_p2">My core mission is to transform complex technical requirements into elegant,
+                    user-friendly, and scalable products that deliver real value.</p>
+
+                <div class="education-card"
+                    style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.05); border-left: 4px solid #2ecc71; border-radius: 8px;">
+                    <h4 data-i18n="educationtitle" style="margin: 0; font-size: 1.1rem; color: #2ecc71;"><i
+                            class="fas fa-graduation-cap"></i>
+                        Education</h4>
+                    <p style="margin: 5px 0 0 0; font-weight: bold;">Universitas Negeri
+                        Surabaya</p>
+                    <p data-i18n="education" style="margin: 2px 0; font-size: 0.9rem; opacity: 0.8;">Bachelor of
+                        Informatics Engineering</p>
+                    <p style="margin: 5px 0 0 0; font-size: 0.95rem;"><strong>GPA: 3.86 / 4.00</strong></p>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h4>4+</h4>
+                        <p data-i18n="stats_exp">Years Exp</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>10+</h4>
+                        <p data-i18n="stats_projects">Total Projects</p>
+                    </div>
+                </div>
+
+                <div class="mini-skills">
+                    <span>Flutter</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Python</span><span>Git</span><span>API</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills fade-in">
+        <h2 class="section-title" data-i18n="skills_title">Tech Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt skill-icon"></i>
+                <h3>Flutter</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-python skill-icon"></i>
+                <h3>Python</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-node-js skill-icon"></i>
+                <h3>Node.js</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-html5 skill-icon"></i>
+                <h3>HTML & CSS</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js skill-icon"></i>
+                <h3>JavaScript</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-plug skill-icon"></i>
+                <h3>API Integration</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-git-alt skill-icon"></i>
+                <h3>Git</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-search-dollar skill-icon"></i>
+                <h3>SEO</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 60px;" data-i18n="soft_skills_title">Soft Skills</h2>
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <i class="fas fa-user-check skill-icon"></i>
+                <h3 data-i18n="ss_resp_title">Responsibility</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;" data-i18n="ss_resp_desc">
+                    Committed to delivering high-quality results.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-lightbulb skill-icon"></i>
+                <h3 data-i18n="ss_prob_title">Problem Solving</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;" data-i18n="ss_prob_desc">
+                    Analytical thinking for complex issues.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-comments skill-icon"></i>
+                <h3 data-i18n="ss_comm_title">Communication</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;" data-i18n="ss_comm_desc">
+                    Clear explanations to teams and clients.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-users skill-icon"></i>
+                <h3 data-i18n="ss_team_title">Teamwork</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;" data-i18n="ss_team_desc">
+                    Collaborating within cross-functional teams.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2 class="section-title fade-in" data-i18n="projects_titlethes">Thesis Projects</h2>
+
+        <div class="projects-container">
+            <div class="project-card featured-project slide-up">
+                <div class="project-badge" data-i18n="badge_final_proj">🎓 Final Project</div>
+                <div class="project-content-wrapper">
+                    <div class="project-image">
+                        <img src="assets/porto_woodball.png" alt="Final Project Thumbnail">
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title" style="color:var(--accent-blue)" data-i18n="woodball_title">
+                            Mobile-Based Woodball Athlete Performance <br>Evaluation and Recommendation Application</h3>
+
+                        <p class="project-highlight" data-i18n="woodball_highlight">A pioneering mobile application for
+                            woodball performance evaluation in Indonesia.</p>
+
+                        <div class="project-description">
+                            <div class="desc-item">
+                                <strong data-i18n="label_problem">Problem:</strong>
+                                <p data-i18n="woodball_problem">The process of recording and evaluating the performance
+                                    of woodball athletes in Indonesia is still done manually using score sheets.</p>
+                            </div>
+                            <div class="desc-item">
+                                <strong data-i18n="label_solution">Solution:</strong>
+                                <p data-i18n="woodball_solution">Developing a mobile application to digitize the process
+                                    of assessing and evaluating woodball athletes' performance.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span>Flutter</span><span>Firebase</span><span data-i18n="tag_math_model">Mathematical
+                                Model</span>
+                        </div>
+
+                        <div class="project-buttons">
+                            <a href="https://ejournal.unesa.ac.id/index.php/jinacs/article/view/72114"
+                                class="btn primary-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i> <span data-i18n="btn_live_thesis">Live
+                                    Thesis</span>
+                            </a>
+                            <a href="https://github.com/Aldi24422/woodball_scoreboard.git" class="btn secondary-btn"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> <span data-i18n="btn_src">Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title fade-in" data-i18n="startup_title">Startup Projects</h2>
+
+        <div class="project-card premium-startup-card">
+            <div class="pulse-badge">🚀 Startup Project</div>
+
+            <div class="startup-content-grid">
+
+                <div class="startup-text-col">
+                    <h3 class="startup-title typing-target fade-in"
+                        data-text="Building Digital Products for Real Businesses" data-i18n="anno_typing"></h3>
+
+                    <p class="startup-desc fade-in delay-1" data-i18n="anno_main">
+                        Co-founded and developed a digital solutions platform focused on building modern websites and
+                        applications for businesses and personal branding.
+                    </p>
+
+                    <div class="startup-lists fade-in delay-2">
+                        <div class="list-box">
+                            <h4 style="color:var(--text-primary);">Role:</h4>
+                            <ul>
+                                <li data-i18n="role_fullstack">Fullstack Developer</li>
+                                <li data-i18n="role_builder">Product Builder</li>
+                                <li data-i18n="role_designer">System Designer</li>
+                            </ul>
+                        </div>
+                        <div class="list-box">
+                            <h4 style="color:var(--text-primary);">Impact:</h4>
+                            <ul>
+                                <li data-i18n="impact_1">Delivered multiple client projects</li>
+                                <li data-i18n="impact_2">Built scalable applications</li>
+                                <li data-i18n="impact_3">Improved business digital presence</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="startup-stats fade-in delay-3">
+                        <div class="stat-counter">
+                            <h4 class="counter-num" data-target="6">0</h4><span>+</span>
+                            <p data-i18n="stat_proj_delivered">Projects Delivered</p>
+                        </div>
+                        <div class="stat-counter">
+                            <h4 class="counter-num" data-target="5">0</h4><span>+</span>
+                            <p data-i18n="stat_clients">Clients</p>
+                        </div>
+                        <div class="stat-counter">
+                            <h4 class="counter-num" data-target="3">0</h4><span>+</span>
+                            <p data-i18n="stat_months_exp">Month Experience</p>
+                        </div>
+                    </div>
+
+                    <div class="premium-tech-tags fade-in delay-4">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Firebase</span>
+                    </div>
+
+                    <div class="startup-actions fade-in delay-5">
+                        <a href="https://anno-tech24.vercel.app/" class="btn primary-btn" target="_blank"
+                            rel="noopener noreferrer">
+                            🚀 <span data-i18n="btn_view_projects">View Projects</span>
+                        </a>
+                        <a href="https://github.com/Aldi24422/anno-tech.git" class="btn secondary-btn" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> <span data-i18n="btn_src">Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="startup-visual-col slide-in-right parallax-wrapper">
+                    <div class="mockup-container parallax-target">
+                        <img src="assets/porto_annotech.png" alt="Anno Tech Mockup">
+                        <div class="mockup-glow"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <h2 class="section-title fade-in" data-i18n="projects_title">Projects</h2>
+
+        <div class="project-grid mt-4">
+
+            <div class="project-card" onclick="openModal('siniops')">
+                <div class="project-img-wrapper">
+                    <img src="assets/siniops/highlight.png" alt="Siniops Enterprise">
+                    <div class="card-overlay">
+                        <span data-i18n="view_case">View Case Study</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tag"
+                        style="color:var(--accent-blue); font-size:0.8rem; font-weight:bold; letter-spacing:1px; margin-bottom:5px;">
+                        <i class="fas fa-briefcase"></i> <span data-i18n="badge_client">Client Project</span>
+                    </div>
+                    <h3>Siniops Enterprise</h3>
+                    <div class="client-badge">💼 client Project</div>
+                    <span class="project-date">Jan 2026</span>
+                    <p data-i18n="project_desc_siniops">Business management platform for coffee shop operations,
+                        integrating inventory, menu control, staff monitoring, and QRIS payment.</p>
+                    <div class="tech-stack">
+                        <span>Flutter</span><span>Dart</span><span>Firebase</span>
+                    </div>
+                    <div class="project-buttons" style="display:flex; gap:15px; margin-top:15px;">
+                        <a href="https://siniops-demo.vercel.app/" class="btn primary-btn" target="_blank"
+                            rel="noopener noreferrer" onclick="event.stopPropagation()">
+                            <i class="fas fa-external-link-alt"></i> <span data-i18n="btn_demo">Demo</span>
+                        </a>
+                        <a href="https://github.com/Aldi24422/siniops-demo.git" class="btn secondary-btn"
+                            target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                            <i class="fab fa-github"></i> <span data-i18n="btn_src_code">Src Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('kurash')">
+                <div class="project-img-wrapper">
+                    <img src="assets/kurash/kurash-0.png" alt="Kurash Scoring">
+                    <div class="card-overlay">
+                        <span data-i18n="view_case">View Case Study</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tag"
+                        style="color:var(--accent-blue); font-size:0.8rem; font-weight:bold; letter-spacing:1px; margin-bottom:5px;">
+                        <i class="fas fa-briefcase"></i> <span data-i18n="badge_client">Client Project</span>
+                    </div>
+                    <h3>Kurash Uzul Digital Scoring</h3>
+                    <span class="project-date">Des 2025</span>
+                    <div class="client-badge">💼 client Project</div>
+                    <p data-i18n="project_desc_kurash">Flutter-based digital scoring system for Kurash competitions,
+                        enabling real-time tracking of techniques and penalties with improved accuracy and clarity.</p>
+                    <div class="tech-stack">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <div class="project-buttons" style="display:flex; gap:15px; margin-top:15px;">
+                        <a href="https://github.com/Aldi24422/kurash-usul-scoring.git" class="btn secondary-btn"
+                            target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                            <i class="fab fa-github"></i> <span data-i18n="btn_src_code">Src Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('annofootball')">
+                <div class="project-img-wrapper">
+                    <img src="assets/anno-football/highlight.png" alt="Project">
+                    <div class="card-overlay"><span data-key="view_case">View Case Study</span></div>
+                </div>
+                <div class="project-info">
+                    <h3>Anno Football – Sports Analytics Dashboard</h3>
+                    <div class="add-badge">🛠️ Additional Project</div>
+                    <span class="project-date">Apr 2026</span>
+                    <p data-i18n="project_desc_football">Anno Football is a football data dashboard that presents
+                        match
+                        schedules, standings, and player statistics from various European leagues in one
+                        interactive,
+                        real-time platform.</p>
+                    <div class="tech-stack"><span>Flutter</span><span>Dart</span><span>Firebase</span></div>
+                    <div class="modal-actions" style="display:flex; gap:15px;">
+                        <a href="https://anno-football.vercel.app/" id="liveLink" class="btn primary-btn"
+                            target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i>
+                            Demo</a>
+                        <a href="https://github.com/Aldi24422/anno-football.git" id="codeLink" class="btn secondary-btn"
+                            target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> src Code</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--INTERN PROJECT-->
+        <div class="project-grid mt-4" style="padding-top: 40px;">
+            <div class="project-card" onclick="openModal('omnichannel')">
+                <div class="project-img-wrapper">
+                    <img src="assets/omnichannel/highlight.png" alt="Project">
+                    <div class="card-overlay"><span data-key="view_case">View Case Study</span></div>
+                </div>
+                <div class="project-info">
+                    <h3>Omnichannel Public Complaint System (Disdukcapil Surabaya)</h3>
+                    <div class="intern-badge">🏢 Intern Project</div>
+                    <span class="project-date">Jan 2025</span>
+                    <p data-i18n="project_desc_omni">Transformed a fragmented manual complaint process.</p>
+                    <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                    <div class="modal-actions" style="display:flex; gap:15px;">
+                        <a href="https://github.com/NasiUduk27/Omnichannel.git" id="codeLink" class="btn secondary-btn"
+                            target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> src Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('asetmonitoring')">
+                <div class="project-img-wrapper">
+                    <img src="assets/monitor/highlight.png" alt="Project">
+                    <div class="card-overlay"><span data-key="view_case">View Case Study</span></div>
+                </div>
+                <div class="project-info">
+                    <h3>Asset Monitoring Aps</h3>
+                    <div class="intern-badge">🏢 Intern Project</div>
+                    <span class="project-date">Apr 2024</span>
+                    <p data-i18n="project_desc_monitor">Developed a real-time asset management system to replace manual
+                        inventory tracking. Improved data accuracy and streamlined asset monitoring using Flutter and
+                        Firebase.</p>
+                    <div class="tech-stack"><span>Flutter</span><span>Dart</span><span>Firebase</span></div>
+                    <div class="modal-actions" style="display:flex; gap:15px;">
+                        <a href="https://aset-monitoring.flutterflow.app/" id="liveLink" class="btn primary-btn"
+                            target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" onclick="openModal('annogram')">
+                <div class="project-img-wrapper">
+                    <img src="assets/Annogram/Annogram-0.jpeg" alt="Project">
+                    <div class="card-overlay"><span data-key="view_case">View Case Study</span></div>
+                </div>
+                <div class="project-info">
+                    <h3>Annogram</h3>
+                    <div class="add-badge">🛠️ Additional Project</div>
+                    <span class="project-date">Mar 2026</span>
+                    <p data-i18n="project_desc_annogram">Telegram-based communication platform with real-time messaging,
+                        voice/video calls, and enhanced privacy features.</p>
+                    <div class="tech-stack"><span>Flutter</span><span>Dart</span><span>Firebase</span></div>
+                    <div class="modal-actions" style="display:flex; gap:15px;">
+                        <a href="https://github.com/Aldi24422/annogram.git" class="btn secondary-btn"
+                            target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> src Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('annofin')">
+                <div class="project-img-wrapper">
+                    <img src="assets/annofin/highlight.png" alt="Project">
+                    <div class="card-overlay"><span data-key="view_case">View Case Study</span></div>
+                </div>
+                <div class="project-info">
+
+                    <h3>Annofin - Personal Finance Tracker</h3>
+                    <div class="add-badge">🛠️ Additional Project</div>
+                    <span class="project-date">Feb 2026</span>
+                    <p data-i18n="project_desc_annofin">Many personal finance applications lack simplicity,
+                        flexibility, and collaborative features, especially for users who want to manage shared finances
+                        in real-time.</p>
+                    <div class="tech-stack"><span>Flutter</span><span>Dart</span><span>Firebase</span></div>
+                    <div class="modal-actions" style="display:flex; gap:15px;">
+                        <a href="https://github.com/Aldi24422/annofin.git" class="btn secondary-btn"
+                            target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> src Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('qristudio')">
+                <div class="project-img-wrapper">
+                    <img src="assets/qrstudio/highlight.png" alt="QR Studio">
+                    <div class="card-overlay">
+                        <span data-i18n="view_case">View Case Study</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tag"
+                        style="color:var(--accent-blue); font-size:0.8rem; font-weight:bold; letter-spacing:1px; margin-bottom:5px;">
+                    </div>
+                    <h3>Custom QR Maker</h3>
+                    <span class="project-date">Jan 2026</span>
+                    <div class="client-badge">🛠️ Additional Project</div>
+                    <p data-i18n="project_desc_qr">Customizable QR code generator for creating branded digital
+                        assets
+                        with flexible design and logo integration.</p>
+                    <div class="tech-stack"><span>Dart</span><span>C++</span><span>CMake</span><span>HTML</span><span>Swift</span></div>
+                    <div class="modal-actions" style="display:flex; gap:15px;">
+                        <a href="https://aldi24422.github.io/custom_qr_maker/" class="btn primary-btn" target="_blank" rel="noopener noreferrer"><i
+                                class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="https://github.com/Aldi24422/custom_qr_maker.git"
+                            class="btn secondary-btn" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-github"></i> src Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('notificationtester')">
+                <div class="project-img-wrapper">
+                    <img src="assets/notificationtester/notif-0.jpeg" alt="Notification Tester">
+                    <div class="card-overlay">
+                        <span data-i18n="view_case">View Case Study</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tag"
+                        style="color:var(--accent-blue); font-size:0.8rem; font-weight:bold; letter-spacing:1px; margin-bottom:5px;">
+                    </div>
+                    <h3>Notification Tester Application</h3>
+                    <span class="project-date">Jan 2026</span>
+                    <div class="client-badge">🛠️ Additional Project</div>
+                    <p data-i18n="project_desc_notif">Notification Tester is a practical tool designed to simplify
+                        notification testing by enabling developers to simulate various types of notifications—ranging
+                        from instant messages to image-based and scheduled alerts—ensuring reliable delivery and user
+                        experience.</p>
+                    <div class="tech-stack"><span>Flutter</span><span>Dart</span><span>Firebase</span></div>
+                    <div class="modal-actions" style="display:flex; gap:15px;">
+                        <a href="https://github.com/Aldi24422/notification_tester/releases/tag/v1.0.0" class="btn primary-btn" target="_blank" rel="noopener noreferrer"><i
+                                class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="https://github.com/Aldi24422/notification_tester.git"
+                            class="btn secondary-btn" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-github"></i> src Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('whiskbot')">
+                <div class="project-img-wrapper">
+                    <img src="assets/whisk/whisk-0.png" alt="Project">
+                    <div class="card-overlay"><span data-key="view_case">View Case Study</span></div>
+                </div>
+                <div class="project-info">
+
+                    <h3>Whisk Automation Bot</h3>
+                    <div class="add-badge">🛠️ Additional Project</div>
+                    <span class="project-date">Jan 2026</span>
+                    <p data-i18n="project_desc_whisk">Chrome extension for automating bulk AI image generation using
+                        Excel-based prompts, reducing manual effort and improving productivity.</p>
+                    <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                    <div class="modal-actions" style="display:flex; gap:15px;">
+                        <a href="https://github.com/Aldi24422/whisk_robot.git" id="codeLink" class="btn secondary-btn"
+                            target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> src Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="projectModal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="close-modal">&times;</button>
+                <div class="modal-body">
+                    <div class="modal-header">
+                        <span class="modal-tag" id="modalTag">Client Project</span>
+                        <h2 id="modalTitle">Project Title</h2>
+                        <span class="project-date" id="modalDate">Month Year</span>
+                    </div>
+
+                    <div class="modal-grid">
+                        <div class="modal-gallery">
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track" id="carouselTrack">
+                                </div>
+                                <button class="carousel-btn prev-btn" onclick="moveSlide(-1)"><i
+                                        class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-btn next-btn" onclick="moveSlide(1)"><i
+                                        class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="carousel-info">
+                                <span id="carouselCounter" class="carousel-counter">1 / 1</span>
+                                <p id="carouselCaption" class="carousel-caption">Caption</p>
+                            </div>
+                        </div>
+
+                        <div class="modal-info">
+                            <div class="info-section">
+                                <h4 data-key="modal_problem" style="color:var(--text-primary); margin-bottom:10px;">
+                                    Problem</h4>
+                                <p id="modalProblem" style="color:var(--text-secondary);"></p>
+                            </div>
+                            <div class="info-section" style="margin-top:20px;">
+                                <h4 data-key="modal_solution" style="color:var(--text-primary); margin-bottom:10px;">
+                                    Solution</h4>
+                                <p id="modalSolution" style="color:var(--text-secondary);"></p>
+                            </div>
+                            <div class="info-section" style="margin-top:20px;">
+                                <h4 data-key="modal_features" style="color:var(--text-primary); margin-bottom:10px;">Key
+                                    Features</h4>
+                                <ul id="modalFeatures" class="feature-list"
+                                    style="list-style:none; color:var(--text-secondary);"></ul>
+                            </div>
+                            <div class="impact-grid" id="modalImpact"></div>
+                            <div class="modal-tech">
+                                <h4 style="color:var(--text-primary);">Tech Stack</h4>
+                                <div id="modalBadges" class="tech-badges" style="margin-bottom:30px;"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="experience" class="experience-section">
+        <h2 class="section-title fade-in" data-i18n="exp_title">Experience</h2>
+
+        <div class="exp-tabs-container fade-in">
+            <button class="exp-tab-btn active" data-target="work-exp" data-i18n="exp_tab_work">
+                Work Experience
+            </button>
+            <button class="exp-tab-btn" data-target="prof-exp" data-i18n="exp_tab_prof">
+                Professional Experience
+            </button>
+        </div>
+
+        <div class="exp-content-wrapper">
+
+            <!-- WORK EXPERIENCE -->
+            <div id="work-exp" class="tab-pane active">
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+
+                    <!-- ITEM 1 -->
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-dot"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div class="exp-icon">🚀</div>
+                                <div class="exp-title-box">
+                                    <h3 data-i18n="exp1_title">Fullstack Developer & Founder</h3>
+                                    <h4 data-i18n="exp1_company">Anno Tech</h4>
+                                </div>
+                                <span class="exp-date" data-i18n="exp1_date">2026 – Present</span>
+                            </div>
+
+                            <ul class="exp-list">
+                                <li data-i18n="exp1_list1">Developed digital platforms for web and app-based business
+                                    solutions.</li>
+                                <li data-i18n="exp1_list2">Handled end-to-end development from UI/UX design to backend
+                                    deployment.</li>
+                                <li data-i18n="exp1_list3">Built company profiles, landing pages, and custom web
+                                    systems.</li>
+                                <li data-i18n="exp1_list4">Collaborated with clients to enhance digital presence.</li>
+                            </ul>
+
+                            <div class="exp-impact">
+                                <strong>Impact:</strong>
+                                <span data-i18n="exp1_impact">
+                                    Successfully delivered multiple client projects, built scalable systems, and helped
+                                    small businesses improve digital branding.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-dot"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div class="exp-icon">💼</div>
+                                <div class="exp-title-box">
+                                    <h3 data-i18n="exp2_title">Application Developer (MSIB)</h3>
+                                    <h4 data-i18n="exp2_company">Disdukcapil Surabaya</h4>
+                                </div>
+                                <span class="exp-date" data-i18n="exp2_date">Aug 2024 – Jan 2025</span>
+                            </div>
+
+                            <ul class="exp-list">
+                                <li data-i18n="exp2_list1">Integrated WhatsApp API into public complaint systems.</li>
+                                <li data-i18n="exp2_list2">Redesigned UI to improve usability and accessibility.</li>
+                                <li data-i18n="exp2_list3">Optimized backend performance for faster responses.</li>
+                                <li data-i18n="exp2_list4">Involved in full development lifecycle.</li>
+                            </ul>
+
+                            <div class="exp-impact">
+                                <strong>Impact:</strong>
+                                <span data-i18n="exp2_impact">
+                                    Improved system response time and simplified access to public services.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-dot"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div class="exp-icon">🏢</div>
+                                <div class="exp-title-box">
+                                    <h3 data-i18n="exp3_title">Application Developer & IT Support</h3>
+                                    <h4 data-i18n="exp3_company">PT Sucofindo (Internship)</h4>
+                                </div>
+                                <span class="exp-date" data-i18n="exp3_date">Jan 2024 – Apr 2024</span>
+                            </div>
+
+                            <ul class="exp-list">
+                                <li data-i18n="exp3_list1">Developed PWA-based asset maintenance system.</li>
+                                <li data-i18n="exp3_list2">Handled installation & troubleshooting software.</li>
+                                <li data-i18n="exp3_list3">Set up office devices.</li>
+                                <li data-i18n="exp3_list4">Maintained SQL Server database.</li>
+                            </ul>
+
+                            <div class="exp-impact">
+                                <strong>Impact:</strong>
+                                <span data-i18n="exp3_impact">
+                                    Increased asset management efficiency and system stability.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PROFESSIONAL -->
+            <div id="prof-exp" class="tab-pane">
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+
+                    <!-- ITEM 1 -->
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-dot"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div class="exp-icon">🏅</div>
+                                <div class="exp-title-box">
+                                    <h3 data-i18n="prof1_title">PORPROV IX East Java Team</h3>
+                                    <h4 data-i18n="prof1_company">IT Committee – Kurash</h4>
+                                </div>
+                                <span class="exp-date" data-i18n="prof1_date">June 2025</span>
+                            </div>
+
+                            <ul class="exp-list">
+                                <li data-i18n="prof1_list1">Handled IT systems during the event.</li>
+                                <li data-i18n="prof1_list2">Supported technical operations.</li>
+                                <li data-i18n="prof1_list3">Coordinated with event teams.</li>
+                            </ul>
+
+                            <div class="exp-impact">
+                                <strong>Impact:</strong>
+                                <span data-i18n="prof1_impact">
+                                    Ensured smooth execution of a provincial sports event.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-dot"></div>
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <div class="exp-icon">🥋</div>
+                                <div class="exp-title-box">
+                                    <h3 data-i18n="prof2_title">PORPROV VIII East Java Team</h3>
+                                    <h4 data-i18n="prof2_company">Kurash Athlete – Surabaya</h4>
+                                </div>
+                                <span class="exp-date" data-i18n="prof2_date">Sept 2023</span>
+                            </div>
+
+                            <ul class="exp-list">
+                                <li data-i18n="prof2_list1">Competed at provincial level.</li>
+                                <li data-i18n="prof2_list2">Followed intensive training.</li>
+                            </ul>
+
+                            <div class="exp-impact">
+                                <strong>Impact:</strong>
+                                <span data-i18n="prof2_impact">
+                                    Represented the city in official competition.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="certificates" class="certificates-section">
+        <h2 class="section-title fade-in">Certificates</h2>
+
+        <div class="cert-grid">
+            <div class="cert-card reveal-up">
+                <div class="cert-img-wrapper">
+                    <img src="assets/certificate/CERTIFICATE_AZIZ RIZALDI_TOEFL TEST PREDICTION.jpg"
+                        alt="Web Development Certificate">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-year">2026</span>
+                    <h3 class="cert-title">TOEFL Test Prediction</h3>
+                    <p class="cert-issuer"><i class="fas fa-award"></i>Webster English Course</p>
+
+                    <div class="cert-actions">
+                        <button class="btn primary-btn cert-view-btn"
+                            onclick="openCertModal('assets/certificate/CERTIFICATE_AZIZ RIZALDI_TOEFL TEST PREDICTION.jpg')">
+                            <i class="fas fa-eye"></i> <span data-i18n="btn_view">View</span>
+                        </button>
+                        <a href="assets/certificate/CERTIFICATE_AZIZ RIZALDI_TOEFL TEST PREDICTION.pdf"
+                            download="CERTIFICATE_AZIZ RIZALDI_TOEFL TEST PREDICTION.pdf"
+                            class="btn secondary-btn cert-dl-btn">
+                            <i class="fas fa-download"></i> <span data-i18n="btn_download">Download</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card reveal-up">
+                <div class="cert-img-wrapper">
+                    <img src="assets/certificate/CERTIFICATE_AZIZ RIZALDI_UDEMY_FLUTTER.jpg"
+                        alt="Web Development Certificate">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-year">2025</span>
+                    <h3 class="cert-title">Flutter Master Class - (Dart, API & More)</h3>
+                    <p class="cert-issuer"><i class="fas fa-award"></i>Udemy</p>
+
+                    <div class="cert-actions">
+                        <button class="btn primary-btn cert-view-btn"
+                            onclick="openCertModal('assets/certificate/CERTIFICATE_AZIZ RIZALDI_UDEMY_FLUTTER.jpg')">
+                            <i class="fas fa-eye"></i> <span data-i18n="btn_view">View</span>
+                        </button>
+                        <a href="assets/certificate/CERTIFICATE_AZIZ RIZALDI_UDEMY_FLUTTER.pdf"
+                            download="CERTIFICATE_AZIZ RIZALDI_UDEMY_FLUTTER.pdf" class="btn secondary-btn cert-dl-btn">
+                            <i class="fas fa-download"></i> <span data-i18n="btn_download">Download</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card reveal-up">
+                <div class="cert-img-wrapper">
+                    <img src="assets/certificate/Enterprise System.jpg"
+                        alt="Enterprise System">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-year">2025</span>
+                    <h3 class="cert-title">Enterprise System</h3>
+                    <p class="cert-issuer"><i class="fas fa-award"></i>University Of Minnesota</p>
+                    <div class="cert-actions">
+                        <button class="btn primary-btn cert-view-btn"
+                            onclick="openCertModal('assets/certificate/Enterprise System.jpg')">
+                            <i class="fas fa-eye"></i> <span data-i18n="btn_view">View</span>
+                        </button>
+                        <a href="assets/certificate/Enterprise System.pdf"
+                            download="Enterprise System.pdf" class="btn secondary-btn cert-dl-btn">
+                            <i class="fas fa-download"></i> <span data-i18n="btn_download">Download</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card reveal-up">
+                <div class="cert-img-wrapper">
+                    <img src="assets/certificate/Seluk beluk Jaringan Komputer.jpg"
+                        alt="Seluk beluk Jaringan Komputer">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-year">2024</span>
+                    <h3 class="cert-title">Seluk beluk Jaringan Komputer</h3>
+                    <p class="cert-issuer"><i class="fas fa-award"></i>Google</p>
+                    <div class="cert-actions">
+                        <button class="btn primary-btn cert-view-btn"
+                            onclick="openCertModal('assets/certificate/Seluk beluk Jaringan Komputer.jpg')">
+                            <i class="fas fa-eye"></i> <span data-i18n="btn_view">View</span>
+                        </button>
+                        <a href="assets/certificate/Seluk beluk Jaringan Komputer.pdf"
+                            download="Seluk beluk Jaringan Komputer.pdf" class="btn secondary-btn cert-dl-btn">
+                            <i class="fas fa-download"></i> <span data-i18n="btn_download">Download</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card reveal-up">
+                <div class="cert-img-wrapper">
+                    <img src="assets/certificate/Dasar Dukungan Teknis.jpg"
+                        alt="Dasar Dukungan Teknis">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-year">2024</span>
+                    <h3 class="cert-title">Dasar Dukungan Teknis</h3>
+                    <p class="cert-issuer"><i class="fas fa-award"></i>Google</p>
+                    <div class="cert-actions">
+                        <button class="btn primary-btn cert-view-btn"
+                            onclick="openCertModal('assets/certificate/Dasar Dukungan Teknis.jpg')">
+                            <i class="fas fa-eye"></i> <span data-i18n="btn_view">View</span>
+                        </button>
+                        <a href="assets/certificate/Dasar Dukungan Teknis.pdf"
+                            download="Dasar Dukungan Teknis.pdf" class="btn secondary-btn cert-dl-btn">
+                            <i class="fas fa-download"></i> <span data-i18n="btn_download">Download</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card reveal-up">
+                <div class="cert-img-wrapper">
+                    <img src="assets/certificate/CERTIFICATE_AZIZ RIZALDI_UDEMY_FLUTTERFLOW.jpeg"
+                        alt="Flutter Development">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-year">2023</span>
+                    <h3 class="cert-title">Flutter App Development (Expert Course)</h3>
+                    <p class="cert-issuer"><i class="fas fa-award"></i>Udemy</p>
+
+                    <div class="cert-actions">
+                        <button class="btn primary-btn cert-view-btn"
+                            onclick="openCertModal('assets/certificate/CERTIFICATE_AZIZ RIZALDI_UDEMY_FLUTTERFLOW.jpeg')">
+                            <i class="fas fa-eye"></i> <span data-i18n="btn_view">View</span>
+                        </button>
+                        <a href="assets/certificate/CERTIFICATE_AZIZ RIZALDI_UDEMY_FLUTTERFLOW.pdf"
+                            download="AZIZ RIZALDI_UDEMY_FLUTTERFLOW.pdf" class="btn secondary-btn cert-dl-btn">
+                            <i class="fas fa-download"></i> <span data-i18n="btn_download">Download</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card reveal-up">
+                <div class="cert-img-wrapper">
+                    <img src="assets/certificate/CERTIFICATE_AZIZ RIZALDI_GL_ANDROID APP DEVELOPMENT.jpeg"
+                        alt="UI/UX Design Fundamentals">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-year">2023</span>
+                    <h3 class="cert-title">Android Application Development</h3>
+                    <p class="cert-issuer"><i class="fas fa-award"></i> Great Learning Academy</p>
+
+                    <div class="cert-actions">
+                        <button class="btn primary-btn cert-view-btn"
+                            onclick="openCertModal('assets/certificate/CERTIFICATE_AZIZ RIZALDI_GL_ANDROID APP DEVELOPMENT.jpeg')">
+                            <i class="fas fa-eye"></i> <span data-i18n="btn_view">View</span>
+                        </button>
+                        <a href="assets/certificate/CERTIFICATE_AZIZ RIZALDI_GL_ANDROID APP DEVELOPMENT.pdf"
+                            download="CERTIFICATE_AZIZ RIZALDI_GL_ANDROID APP DEVELOPMENT.pdf"
+                            class="btn secondary-btn cert-dl-btn">
+                            <i class="fas fa-download"></i> <span data-i18n="btn_download">Download</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card reveal-up">
+                <div class="cert-img-wrapper">
+                    <img src="assets/certificate/CERTIFICATE_AZIZ RIZALDI_ALISON_GRAPHIC DESIGN.jpg"
+                        alt="Web Development Certificate">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-year">2023</span>
+                    <h3 class="cert-title">Graphic Design - Visual and Graphic Design</h3>
+                    <p class="cert-issuer"><i class="fas fa-award"></i>Alison</p>
+
+                    <div class="cert-actions">
+                        <button class="btn primary-btn cert-view-btn"
+                            onclick="openCertModal('assets/certificate/CERTIFICATE_AZIZ RIZALDI_ALISON_GRAPHIC DESIGN.jpg')">
+                            <i class="fas fa-eye"></i> <span data-i18n="btn_view">View</span>
+                        </button>
+                        <a href="assets/certificate/CERTIFICATE_AZIZ RIZALDI_ALISON_GRAPHIC DESIGN.pdf"
+                            download="CERTIFICATE_AZIZ RIZALDI_ALISON_GRAPHIC DESIGN.pdf"
+                            class="btn secondary-btn cert-dl-btn">
+                            <i class="fas fa-download"></i> <span data-i18n="btn_download">Download</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card reveal-up">
+                <div class="cert-img-wrapper">
+                    <img src="assets/certificate/CERTIFICATE_AZIZ RIZALDI_PROGRATE_HTML&CSS.jpg"
+                        alt="Flutter Development">
+                </div>
+                <div class="cert-info">
+                    <span class="cert-year">2021</span>
+                    <h3 class="cert-title"> HTML dan CSS</h3>
+                    <p class="cert-issuer"><i class="fas fa-award"></i>Progate</p>
+
+                    <div class="cert-actions">
+                        <button class="btn primary-btn cert-view-btn"
+                            onclick="openCertModal('assets/certificate/CERTIFICATE_AZIZ RIZALDI_PROGRATE_HTML&CSS.jpg')">
+                            <i class="fas fa-eye"></i> <span data-i18n="btn_view">View</span>
+                        </button>
+                        <a href="assets/certificate/KURSUS HTML & CSS (Aziz Rizaldi).pdf"
+                            download="KURSUS HTML & CSS (Aziz Rizaldi).pdf" class="btn secondary-btn cert-dl-btn">
+                            <i class="fas fa-download"></i> <span data-i18n="btn_download">Download</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="certModal" class="cert-modal-overlay">
+        <div class="cert-modal-content">
+            <button class="cert-close-btn" onclick="closeCertModal()">&times;</button>
+            <div class="cert-modal-body">
+                <img id="certModalImg" src="" alt="Certificate Full View">
+            </div>
+        </div>
+    </div>
+
+
+    <section id="contact" class="contact premium-section fade-in">
+        <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
+        <p class="contact-desc" data-i18n="contact_desc">Interested in working together or just saying hi? Don't
+            hesitate to contact me!</p>
+
+        <div class="contact-card-container">
+            <a href="mailto:azizrizaldi18@email.com" class="contact-card">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <span class="contact-text">Email</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/m-aziz-rizaldi-b88b04157/" target="_blank" rel="noopener noreferrer"
+                class="contact-card">
+                <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                <span class="contact-text">LinkedIn</span>
+            </a>
+
+            <a href="https://github.com/Aldi24422" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div class="contact-icon"><i class="fab fa-github"></i></div>
+                <span class="contact-text">GitHub</span>
+            </a>
+
+            <a href="https://wa.me/6285117776959" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                <span class="contact-text">WhatsApp</span>
+            </a>
+
+            <a href="https://instagram.com/azizrizaldi_" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                <span class="contact-text">Instagram</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 M. Aziz Rizaldi. Crafted with passion & code.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
