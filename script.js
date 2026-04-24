@@ -2,9 +2,9 @@
 const translations = {
     en: {
         nav_home: "Home", nav_about: "About", nav_skills: "Skills", nav_projects: "Projects",
-        nav_experience: "Experience", nav_contact: "Contact", hero_title: "Building Digital Solutions",
-        hero_subtitle: "Fullstack Developer crafting clean, efficient, and scalable web applications.",
-        hero_greeting: "Hi, I'm", hero_role: "Web Apps Developer", btn_work: "View My Work",
+        nav_experience: "Experience", nav_contact: "Contact", hero_title: "Fullstack Developer",
+        hero_subtitle: "Crafting clean, efficient, and scalable applications.",
+        hero_greeting: "Hi, I'm", hero_role: "Software Engineer", btn_work: "View My Work",
         about_title: "About Me",
         about_p1: "I am an Informatics Engineering graduate and a versatile Developer with 2+ years of experience building end-to-end digital solutions. I specialize in integrating robust backend services with seamless cloud data management to create high-performance web and mobile applications.",
         about_p2: "My core mission is to transform complex technical requirements into elegant, user-friendly, and scalable products that deliver real value.",
@@ -132,9 +132,9 @@ const translations = {
     },
     id: {
         nav_home: "Beranda", nav_about: "Tentang", nav_skills: "Keahlian", nav_projects: "Proyek",
-        nav_experience: "Pengalaman", nav_contact: "Kontak", hero_title: "Membangun Solusi Digital",
-        hero_subtitle: "Developer Fullstack yang menciptakan aplikasi web efisien, bersih, dan scalable.",
-        hero_greeting: "Halo, Saya", hero_role: "Pengembang Aplikasi Web", btn_work: "Lihat Karya Saya",
+        nav_experience: "Pengalaman", nav_contact: "Kontak", hero_title: "Fullstack Developer",
+        hero_subtitle: "Membangun aplikasi yang bersih, efisien, dan scalable.",
+        hero_greeting: "Halo, Saya", hero_role: "Software Engineer", btn_work: "Lihat Karya Saya",
         about_title: "Tentang Saya",
         about_p1: "Saya adalah lulusan Teknik Informatika dan Developer serba bisa dengan 2+ tahun pengalaman membangun solusi digital end-to-end. Saya berspesialisasi dalam mengintegrasikan layanan backend yang kuat dengan manajemen data cloud untuk menciptakan aplikasi berkinerja tinggi.",
         about_p2: "Misi utama saya adalah mengubah kebutuhan teknis yang kompleks menjadi produk yang elegan, user-friendly, dan scalable.",
