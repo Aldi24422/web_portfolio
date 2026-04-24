@@ -140,7 +140,7 @@ const translations = {
         about_p2: "Misi utama saya adalah mengubah kebutuhan teknis yang kompleks menjadi produk yang elegan, user-friendly, dan scalable.",
         educationtitle: "Edukasi",
         education: "S1 Teknik Informatika",
-        stats_projects: "Proyek", stats_exp: "Tahun Pglmn", stats_apps: "Aplikasi Mobile", stats_web: "Situs Web",
+        stats_projects: "Proyek", stats_exp: "Tahun Pengalaman", stats_apps: "Aplikasi Mobile", stats_web: "Situs Web",
         skills_title: "Keahlian Teknis", projects_title: "Proyek Pilihan", view_case: "Lihat Studi Kasus",
         proj2_desc: "QR Studio adalah generator kode QR lintas platform yang mengubah data penting menjadi aset visual bermerek yang dapat disesuaikan.",
         exp_title: "Pengalaman & Organisasi", exp_tab1: "Pengalaman", exp_tab2: "Organisasi",
